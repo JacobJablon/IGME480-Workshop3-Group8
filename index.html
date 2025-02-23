@@ -3,7 +3,9 @@
 
 <head>
     <!-- Howler -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js" integrity="sha512-xi/RZRIF/S0hJ+yJJYuZ5yk6/8pCiRlEXZzoguSMl+vk2i3m6UjUO/WcZ11blRL/O+rnj94JRGwt/CHbc9+6EA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"
+        integrity="sha512-xi/RZRIF/S0hJ+yJJYuZ5yk6/8pCiRlEXZzoguSMl+vk2i3m6UjUO/WcZ11blRL/O+rnj94JRGwt/CHbc9+6EA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- A-Frame -->
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <!-- Geolocation features -->
@@ -13,82 +15,56 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex.js"></script>
     <!-- AR.js A-Frame components -->
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    
+
     <title>Workshop 3 - Group 8</title>
 </head>
 
 <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs vr-mode-ui="enabled: false" raycaster cursor="rayOrigin: mouse" renderer="antialias: true; alpha: true" id="scene">
+    <a-scene embedded arjs vr-mode-ui="enabled: false" raycaster cursor="rayOrigin: mouse"
+        renderer="antialias: true; alpha: true" id="scene">
         <a-assets>
             <audio id="paper" src="./audio/mixkit-pile-of-paper-trash-2381.wav" preload="auto"></audio>
-          </a-assets>
-        
+        </a-assets>
+
 
         <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
 
         <!-- Overall container entity that holds every other entity -->
-        <a-entity
-            id="everything-container" rotation="0 0 0" position="0 0 0">
+        <a-entity id="everything-container" rotation="0 0 0" position="0 0 0">
 
             <a-entity id="xerox-scene">
-                <a-entity
-                    id="xerox-text"
-                    geometry="primitive: plane; width: 3; height: 2"
-                    position="-2 1.75 -5"
-                    rotation="0 20 0"
-                    material="color: orange"
-                    text="value: sample text"
-                    sound="src: #paper; on: click"
+                <a-entity id="xerox-text" geometry="primitive: plane; width: 3; height: 2" position="-2 1.75 -5"
+                    rotation="0 20 0" material="color: orange" text="value: sample text" sound="src: #paper; on: click"
                     clicker>
                 </a-entity>
-         
-             
-                <a-entity
-                    id="xerox-3d-model"
-                    gltf-model="copy-machine/scene.gltf"
-                    scale="1 1 1"
-                    position="2 1.75 -10"
+
+
+                <a-entity id="xerox-3d-model" gltf-model="copy-machine/scene.gltf" scale="1 1 1" position="2 1.75 -10"
                     rotation="0 -20 0"
                     animation="property: position; from: 2 1.5 -5; to: 2 2 -5; dur: 3000; easing: linear; loop: true; easing: easeInOutQuad; dir: alternate"
                     animation__2="property: rotation; to: 0 340 0; loop: true; dur: 10000; easing: linear">
                 </a-entity>
 
-                
 
-                <a-entity
-                    id="next-arrow"
-                    gltf-model="direction-arrow/scene.gltf"
-                    position="0.35 0.75 -4.75"
-                    scale="0.25 0.25 0.25"
-                    rotation="90 0 0"
-                    back-btn>
+
+                <a-entity id="next-arrow" gltf-model="direction-arrow/scene.gltf" position="0.35 0.75 -4.75"
+                    scale="0.25 0.25 0.25" rotation="90 0 0" back-btn>
                 </a-entity>
 
-                <a-entity
-                    id="next-arrow-text"
-                    position="1.15 0.73 -4.7"
-                    text="value: NEXT; width: 2"
-                    next-btn>
+                <a-entity id="next-arrow-text" position="1.15 0.73 -4.7" text="value: NEXT; width: 2" next-btn>
                 </a-entity>
 
-                <a-entity
-                    id="back-arrow"
-                    gltf-model="direction-arrow/scene.gltf"
-                    position="-0.35 0.75 -4.75"
-                    scale="0.25 0.25 0.25"
-                    rotation="90 0 180">
+                <a-entity id="back-arrow" gltf-model="direction-arrow/scene.gltf" position="-0.35 0.75 -4.75"
+                    scale="0.25 0.25 0.25" rotation="90 0 180">
                 </a-entity>
 
-                <a-entity
-                    id="back-arrow-text"
-                    position="0.6 0.73 -4.7"
-                    text="value: BACK; width: 2">
+                <a-entity id="back-arrow-text" position="0.6 0.73 -4.7" text="value: BACK; width: 2">
                 </a-entity>
             </a-entity>
         </a-entity>
 
-        
-        
+
+
     </a-scene>
 </body>
 <script>
@@ -97,50 +73,68 @@
 
     // sounds 
     const audio1 = new Howl({
-      src: ['./audio/ElevenLabs_2025-02-23T22_18_53_Brian_pre_s40_sb75_se14_b_m2.mp3']
+        src: ['./audio/ElevenLabs_2025-02-23T22_18_53_Brian_pre_s40_sb75_se14_b_m2.mp3']
+    });
+    const audio2 = new Howl({
+        src: ['./audio/scene2.mp3']
+    });
+    const audio3 = new Howl({
+        src: ['./audio/scene3.mp3']
     });
 
 
-    
+
     let xeroxScene = 1;
     updateXeroxScene();
-    
+
 
 
 
     AFRAME.registerComponent('next-btn', {
-            init: function () {
-                this.el.addEventListener('click', e => {
-                    xeroxScene++;
-                    updateXeroxScene();
-                });
-            }
+        init: function () {
+            this.el.addEventListener('click', e => {
+                xeroxScene++;
+                updateXeroxScene();
+            });
+        }
     });
 
     AFRAME.registerComponent('back-btn', {
-            init: function () {
-                this.el.addEventListener('click', e => {
-                    xeroxScene--;
-                    updateXeroxScene();
-                });
-            }
+        init: function () {
+            this.el.addEventListener('click', e => {
+                xeroxScene--;
+                updateXeroxScene();
+            });
+        }
     });
-    
+
     function updateXeroxScene() {
         if (xeroxScene == 1) {
             console.log("secen 1 loadaed")
-            audio1.play()
+
+
             xeroxText.setAttribute("text", "value: This is the story of a company, which once stood on top of the world in office technology. \n From their advances in xerography to the creation of their copiers, Xerox quickly rose to be one of the top competitors in printing technology. \n That was until..it wasn't");
             xerox3dModel.setAttribute("gltf-model", "copy-machine/scene.gltf")
+            setTimeout(() => {
+                audio1.play();
+            }, 1000);
         } else if (xeroxScene == 2) {
+            setTimeout(() => {
+                audio1.play();
+            }, 1000);
+            audio2.play
             xeroxText.setAttribute("text", "value: The age of personal computers started to create an uproad, and everyone was eager to get their hands on one. \n Not wanting to be out of the picture, Xerox did their best o keep up with the evolving revolution. Creating the Xerox Alto, one of the first workstations, they hoped to put their name back in the picture. \n However...")
             xerox3dModel.setAttribute("gltf-model", "xerox-alto/scene.gltf")
         } else if (xeroxScene == 3) {
-            audio1.play()
+            setTimeout(() => {
+                audio1.play();
+            }, 1000);
+            audio3.play()
             xeroxText.setAttribute("text", "value: They flew to close to the sun. As years went on, Xerox started to lose the race with the emerging technologies, and saw a decrease in sale numbers, period by period....");
             xerox3dModel.setAttribute("gltf-model", "copy-machine/scene.gltf")
         }
-     
+
     }
 </script>
+
 </html>
