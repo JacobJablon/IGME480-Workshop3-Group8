@@ -23,17 +23,53 @@
         <a-entity
             id="everything-container" rotation="0 0 0" position="0 0 0">
 
-            <a-entity
-                geometry="primitive: plane; width: 4; height: 0"
-                material="color: blue"
-                text="value: This text will be 4 units wide."></a-entity>
+            <a-entity id="xerox-scene">
+                <a-entity
+                    id="xerox-text"
+                    geometry="primitive: plane; width: 5; height: 2"
+                    position="-2 1.75 -5"
+                    rotation="0 20 0"
+                    material="color: blue"
+                    text="value: This is just sample text that is displayed right now.">
+                </a-entity>
+
+                <a-entity
+                    gltf-model="copy-machine/scene.gltf"
+                    scale="1 1 1"
+                    position="2 1.75 -10"
+                    rotation="0 -20 0"
+                    animation="property: position; from: 2 1.5 -5; to: 2 2 -5; dur: 3000; easing: linear; loop: true; easing: easeInOutQuad; dir: alternate"
+                    animation__2="property: rotation; to: 0 340 0; loop: true; dur: 10000; easing: linear">
+                </a-entity>
+            </a-entity>
         </a-entity>
 
-        <a-box color="tomato" depth="2" height="4" width="0.5" position="0 10 0"></a-box>
+        
         
     </a-scene>
 </body>
 <script>
+    // let booksContainer = document.querySelector("#books-container");
 
+    // for (let i = 0; i < 40; i++) {
+    //     let whichBook = Math.random() < 0.5 ? "xerox-alto" : "xerox-alto";
+
+    //     let coordX = Math.random() < 0.5 ? Math.round(Math.random() * 20) : Math.round(Math.random() * -20);
+    //     let coordZ = Math.random() < 0.5 ? Math.round(Math.random() * 20) : Math.round(Math.random() * -20);
+    //     let duration = 2000 + Math.round(Math.random() * 2000);
+
+    //     let booksContainerHTML = `
+    //         <a-entity
+    //             class="book"
+    //             gltf-model="${whichBook}/scene.gltf"
+    //             scale="1 1 1"
+    //             rotation="90 0 0"
+    //             position="${coordX} ${3 * i} ${coordZ}"
+    //             animation="property: rotation; to: 90 360 0; loop: true; dur: ${duration}; easing: linear">
+    //         </a-entity>
+    //         `;
+
+    //         booksContainer.innerHTML += booksContainerHTML
+    // };
 </script>
 </html>
