@@ -29,7 +29,7 @@
                     geometry="primitive: plane; width: 3; height: 2"
                     position="-2 1.75 -5"
                     rotation="0 20 0"
-                    material="color: gray"
+                    material="color: green"
                     text="value: This is just sample text that is displayed right now."
                     clicker>
                 </a-entity>
@@ -56,16 +56,7 @@
 
     let xeroxScene = 1;
 
-    if (xeroxScene == 1) {
-        xeroxText.setAttribute("text", "value: TEST 1");
-        xerox3dModel.setAttribute("gltf-model", "copy-machine/scene.gltf")
-    } else if (xeroxScene == 2) {
-        xeroxText.setAttribute("text", "value: TEST 2");
-        xerox3dModel.setAttribute("gltf-model", "xerox-alto/scene.gltf")
-    } else if (xeroxScene == 3) {
-        xeroxText.setAttribute("text", "value: TEST 3");
-        xerox3dModel.setAttribute("gltf-model", "copy-machine/scene.gltf")
-    }
+    
 
 
 
@@ -73,10 +64,24 @@
             init: function () {
                 this.el.addEventListener('click', e => {
                     xeroxScene++;
-                    alert(xeroxScene);
+                    // alert(xeroxScene);
+                    updateXeroxScene();
                 });
             }
         });
+    
+    function updateXeroxScene() {
+        if (xeroxScene == 1) {
+            xeroxText.setAttribute("text", "value: TEST 1");
+            xerox3dModel.setAttribute("gltf-model", "copy-machine/scene.gltf")
+        } else if (xeroxScene == 2) {
+            xeroxText.setAttribute("text", "value: TEST 2");
+            xerox3dModel.setAttribute("gltf-model", "xerox-alto/scene.gltf")
+        } else if (xeroxScene == 3) {
+            xeroxText.setAttribute("text", "value: TEST 3");
+            xerox3dModel.setAttribute("gltf-model", "copy-machine/scene.gltf")
+        }
+    }
     // let booksContainer = document.querySelector("#books-container");
 
     // for (let i = 0; i < 40; i++) {
