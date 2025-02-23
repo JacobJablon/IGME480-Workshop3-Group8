@@ -33,9 +33,14 @@
         <a-entity id="everything-container" rotation="0 0 0" position="0 0 0">
 
             <a-entity id="xerox-scene">
-                <a-entity id="xerox-text" geometry="primitive: plane; width: 3; height: 2" position="-2 1.75 -5"
-                    rotation="0 20 0" material="color: orange" text="value: sample text" sound="src: #paper; on: click"
-                    clicker>
+                <a-entity
+                    id="xerox-text"
+                    geometry="primitive: plane; width: 3; height: 2"
+                    position="-2 1.75 -5"
+                    rotation="0 20 0"
+                    material="color: green"
+                    text="value: sample text"
+                    >
                 </a-entity>
 
 
@@ -46,16 +51,28 @@
                 </a-entity>
 
 
-
-                <a-entity id="next-arrow" gltf-model="direction-arrow/scene.gltf" position="0.35 0.75 -4.75"
-                    scale="0.25 0.25 0.25" rotation="90 0 0" back-btn>
+                <a-entity
+                    id="next-arrow"
+                    gltf-model="direction-arrow/scene.gltf"
+                    position="0.35 0.75 -4.75"
+                    scale="0.25 0.25 0.25"
+                    rotation="90 0 0"
+                    next>
                 </a-entity>
 
-                <a-entity id="next-arrow-text" position="1.15 0.73 -4.7" text="value: NEXT; width: 2" next-btn>
+                <a-entity
+                    id="next-arrow-text"
+                    position="1.15 0.73 -4.7"
+                    text="value: NEXT; width: 2">
                 </a-entity>
 
-                <a-entity id="back-arrow" gltf-model="direction-arrow/scene.gltf" position="-0.35 0.75 -4.75"
-                    scale="0.25 0.25 0.25" rotation="90 0 180">
+                <a-entity
+                    id="back-arrow"
+                    gltf-model="direction-arrow/scene.gltf"
+                    position="-0.35 0.75 -4.75"
+                    scale="0.25 0.25 0.25"
+                    rotation="90 0 180"
+                    back>
                 </a-entity>
 
                 <a-entity id="back-arrow-text" position="0.6 0.73 -4.7" text="value: BACK; width: 2">
@@ -90,22 +107,22 @@
 
 
 
-    AFRAME.registerComponent('next-btn', {
-        init: function () {
-            this.el.addEventListener('click', e => {
-                xeroxScene++;
-                updateXeroxScene();
-            });
-        }
+    AFRAME.registerComponent('next', {
+            init: function () {
+                this.el.addEventListener('click', e => {
+                    xeroxScene++;
+                    updateXeroxScene();
+                });
+            }
     });
 
-    AFRAME.registerComponent('back-btn', {
-        init: function () {
-            this.el.addEventListener('click', e => {
-                xeroxScene--;
-                updateXeroxScene();
-            });
-        }
+    AFRAME.registerComponent('back', {
+            init: function () {
+                this.el.addEventListener('click', e => {
+                    xeroxScene--;
+                    updateXeroxScene();
+                });
+            }
     });
 
     function updateXeroxScene() {
