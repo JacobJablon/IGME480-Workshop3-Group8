@@ -30,7 +30,8 @@
                     position="-2 1.75 -5"
                     rotation="0 20 0"
                     material="color: orange"
-                    text="value: sample text">
+                    text="value: sample text"
+                    >
                 </a-entity>
 
                 <a-entity
@@ -51,14 +52,13 @@
                     position="0.35 0.75 -4.75"
                     scale="0.25 0.25 0.25"
                     rotation="90 0 0"
-                    back-btn>
+                    next>
                 </a-entity>
 
                 <a-entity
                     id="next-arrow-text"
                     position="1.15 0.73 -4.7"
-                    text="value: NEXT; width: 2"
-                    next-btn>
+                    text="value: NEXT; width: 2">
                 </a-entity>
 
                 <a-entity
@@ -66,7 +66,8 @@
                     gltf-model="direction-arrow/scene.gltf"
                     position="-0.35 0.75 -4.75"
                     scale="0.25 0.25 0.25"
-                    rotation="90 0 180">
+                    rotation="90 0 180"
+                    back>
                 </a-entity>
 
                 <a-entity
@@ -91,7 +92,7 @@
 
 
 
-    AFRAME.registerComponent('next-btn', {
+    AFRAME.registerComponent('next', {
             init: function () {
                 this.el.addEventListener('click', e => {
                     xeroxScene++;
@@ -100,7 +101,7 @@
             }
     });
 
-    AFRAME.registerComponent('back-btn', {
+    AFRAME.registerComponent('back', {
             init: function () {
                 this.el.addEventListener('click', e => {
                     xeroxScene--;
