@@ -23,14 +23,15 @@
         <a-entity
             id="everything-container" rotation="0 0 0" position="0 0 0">
 
-            <a-entity id="xerox-scene" clicker>
+            <a-entity id="xerox-scene">
                 <a-entity
                     id="xerox-text"
-                    geometry="primitive: plane; width: 5; height: 2"
+                    geometry="primitive: plane; width: 3; height: 2"
                     position="-2 1.75 -5"
                     rotation="0 20 0"
-                    material="color: blue"
-                    text="value: This is just sample text that is displayed right now.">
+                    material="color: gray"
+                    text="value: This is just sample text that is displayed right now."
+                    clicker>
                 </a-entity>
 
                 <a-entity
@@ -57,13 +58,13 @@
 
     if (xeroxScene == 1) {
         xeroxText.setAttribute("text", "value: TEST 1");
-        xerox3dModel.setAttribute("gltf-model", "xerox-alto/scene.gltf")
+        xerox3dModel.setAttribute("gltf-model", "copy-machine/scene.gltf")
     } else if (xeroxScene == 2) {
         xeroxText.setAttribute("text", "value: TEST 2");
-        xerox3dModel.setAttribute("gltf-model", "copy-machine/scene.gltf")
+        xerox3dModel.setAttribute("gltf-model", "xerox-alto/scene.gltf")
     } else if (xeroxScene == 3) {
         xeroxText.setAttribute("text", "value: TEST 3");
-        xerox3dModel.setAttribute("gltf-model", "xerox-alto/scene.gltf")
+        xerox3dModel.setAttribute("gltf-model", "copy-machine/scene.gltf")
     }
 
 
@@ -72,6 +73,7 @@
             init: function () {
                 this.el.addEventListener('click', e => {
                     xeroxScene++;
+                    alert(xeroxScene);
                 });
             }
         });
