@@ -29,7 +29,7 @@
                     geometry="primitive: plane; width: 3; height: 2"
                     position="-2 1.75 -5"
                     rotation="0 20 0"
-                    material="color: green"
+                    material="color: red"
                     text="value: sample text"
                     clicker>
                 </a-entity>
@@ -71,7 +71,7 @@
     
     function updateXeroxScene() {
         if (xeroxScene == 1) {
-            xeroxText.setAttribute("text", "value: TEST 1");
+            xeroxText.setAttribute("text", "value: This is the story of a company, which once stood on top of the world in office technology. \n From their advances in xerography to the creation of their copiers, Xerox quickly rose to be one of the top competitors in printing technology. \n That was until..it wasn't");
             xerox3dModel.setAttribute("gltf-model", "copy-machine/scene.gltf")
         } else if (xeroxScene == 2) {
             xeroxText.setAttribute("text", "value: TEST 2");
