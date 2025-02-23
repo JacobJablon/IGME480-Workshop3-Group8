@@ -30,8 +30,7 @@
                     position="-2 1.75 -5"
                     rotation="0 20 0"
                     material="color: orange"
-                    text="value: sample text"
-                    clicker>
+                    text="value: sample text">
                 </a-entity>
 
                 <a-entity
@@ -42,6 +41,38 @@
                     rotation="0 -20 0"
                     animation="property: position; from: 2 1.5 -5; to: 2 2 -5; dur: 3000; easing: linear; loop: true; easing: easeInOutQuad; dir: alternate"
                     animation__2="property: rotation; to: 0 340 0; loop: true; dur: 10000; easing: linear">
+                </a-entity>
+
+                
+
+                <a-entity
+                    id="next-arrow"
+                    gltf-model="direction-arrow/scene.gltf"
+                    position="0.35 0.75 -4.75"
+                    scale="0.25 0.25 0.25"
+                    rotation="90 0 0"
+                    back-btn>
+                </a-entity>
+
+                <a-entity
+                    id="next-arrow-text"
+                    position="1.15 0.73 -4.7"
+                    text="value: NEXT; width: 2"
+                    next-btn>
+                </a-entity>
+
+                <a-entity
+                    id="back-arrow"
+                    gltf-model="direction-arrow/scene.gltf"
+                    position="-0.35 0.75 -4.75"
+                    scale="0.25 0.25 0.25"
+                    rotation="90 0 180">
+                </a-entity>
+
+                <a-entity
+                    id="back-arrow-text"
+                    position="0.6 0.73 -4.7"
+                    text="value: BACK; width: 2">
                 </a-entity>
             </a-entity>
         </a-entity>
@@ -60,14 +91,23 @@
 
 
 
-    AFRAME.registerComponent('clicker', {
+    AFRAME.registerComponent('next-btn', {
             init: function () {
                 this.el.addEventListener('click', e => {
                     xeroxScene++;
                     updateXeroxScene();
                 });
             }
-        });
+    });
+
+    AFRAME.registerComponent('back-btn', {
+            init: function () {
+                this.el.addEventListener('click', e => {
+                    xeroxScene--;
+                    updateXeroxScene();
+                });
+            }
+    });
     
     function updateXeroxScene() {
         if (xeroxScene == 1) {
